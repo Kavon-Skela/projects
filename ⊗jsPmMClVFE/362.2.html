@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+
+<script>
+"use strict"
+
+;(function() {
+    let obj = {};
+	obj.str1 = 'переменная модуля';
+	obj.str2 = 'переменная модуля';
+	let str3 = 'переменная модуля';
+	
+	obj.func1 = function () {
+		alert('функция модуля');
+	}
+	obj.func2 = function () {
+		alert('функция модуля');
+	}
+	obj.func3 = function () {
+		alert('функция модуля');
+	}
+	obj.func4 = function () {
+		alert('функция модуля');
+	}
+	obj.func5 = function () {
+		alert('функция модуля');
+	}
+    window.obj = obj;
+})();
+
+console.log(obj)
+
+</script>
+</body>
+
+<style>
+
+</style>
+</html>

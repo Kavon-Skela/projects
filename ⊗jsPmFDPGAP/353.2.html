@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<ul>
+
+</ul>
+
+<script>
+"use strict"
+let arr = [1, 2, 3, 4, 5];
+let ul = document.querySelector('ul');
+
+function appendElem (parent, newLi) {
+    let li = document.createElement('li');
+    li.innerHTML = newLi;
+    parent.appendChild(li);
+}
+
+for (let elems of arr) {
+    appendElem(ul, elems)
+}
+
+
+</script>
+</body>
+
+<style>
+
+</style>
+</html>

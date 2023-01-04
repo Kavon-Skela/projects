@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<table>
+
+</table>
+<div>
+<input type="text" name="" id="name">
+<input type="text" name="" id="age">
+<input type="text" name="" id="salary">
+<button>add</button>
+</div>
+<script>
+"use strict"
+let employees = [
+	{name: 'employee1', age: 30, salary: 400},
+	{name: 'employee2', age: 31, salary: 500},
+	{name: 'employee3', age: 32, salary: 600},
+];
+let table = document.querySelector('table');
+
+for (let objects of employees) {
+	let tr = document.createElement('tr');
+	
+	let td1 = document.createElement('td');
+	td1.textContent = objects.name;
+	tr.appendChild(td1);
+	
+	let td2 = document.createElement('td');
+	td2.textContent = objects.age;
+	tr.appendChild(td2);
+	
+	let td3 = document.createElement('td');
+	td3.textContent = objects.salary;
+	tr.appendChild(td3);
+	
+	table.appendChild(tr);
+}
+
+let tds = document.querySelectorAll('table td');
+
+for (let elems of tds) {
+    elems.addEventListener('click', function kerk () {
+       let newInp = document.createElement('input');
+       newInp.value = elems.textContent;
+       elems.textContent = '';
+       newInp.addEventListener('blur', function () {
+            elems.textContent = this.value;
+            this.remove()
+       })
+       elems.appendChild(newInp);
+    })
+}
+
+let trs = document.querySelectorAll('table tr');
+
+for (let elems of trs) {
+    let removal = document.createElement('a');
+    removal.href = '#';
+    removal.innerHTML = 'remove';
+    removal.addEventListener('click', function () {
+        removal.parentElement.remove();
+    })
+    elems.appendChild(removal);
+}
+
+let button = document.querySelector('button');
+let inpName = document.querySelector('#name');
+let inpAge = document.querySelector('#age');
+let inpSalary = document.querySelector('#salary');
+
+button.addEventListener('click', function () {
+    let newTr = document.createElement('tr');
+
+    let td1 = document.createElement('td');
+    td1.textContent = inpName.value;
+    td1.addEventListener('click', function func () {
+       let newInp = document.createElement('input');
+       newInp.value = td1.textContent;
+       td1.textContent = '';
+       newInp.addEventListener('blur', function () {
+            td1.textContent = this.value;
+            this.remove()
+       })
+       td1.appendChild(newInp);
+    })
+    newTr.appendChild(td1);
+
+    let td2 = document.createElement('td');
+    td2.textContent = inpAge.value;
+    td2.addEventListener('click', function func () {
+       let newInp = document.createElement('input');
+       newInp.value = td2.textContent;
+       td2.textContent = '';
+       newInp.addEventListener('blur', function () {
+            td2.textContent = this.value;
+            this.remove()
+       })
+       td2.appendChild(newInp);
+    })
+    newTr.appendChild(td2);
+
+    let td3 = document.createElement('td');
+    td3.textContent = inpSalary.value;
+    td3.addEventListener('click', function func () {
+       let newInp = document.createElement('input');
+       newInp.value = td3.textContent;
+       td3.textContent = '';
+       newInp.addEventListener('blur', function () {
+            td3.textContent = this.value;
+            this.remove()
+       })
+       td3.appendChild(newInp);
+    })
+    newTr.appendChild(td3);
+
+    table.appendChild(newTr)
+})
+</script>
+</body>
+
+<style>
+
+</style>
+</html>

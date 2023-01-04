@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<ul>
+
+</ul>
+
+<script>
+"use strict"
+
+let ul = document.querySelector('ul');
+
+function appendElem (parent, newLi) {
+    let li = document.createElement('li');
+    li.innerHTML = newLi;
+    parent.appendChild(li);
+}
+
+appendElem(ul, '!!!!!');
+appendElem(ul, '!!!!!');
+appendElem(ul, '!!!!!');
+
+</script>
+</body>
+
+<style>
+
+</style>
+</html>

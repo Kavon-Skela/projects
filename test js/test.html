@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script>
+"use strict"
+
+let promise = new Promise(function(resolve, reject) {
+    setTimeout(() => {resolve('выполнилось через 3 секунды')
+        
+    }, 3000);
+})
+promise.then(alert)
+</script>
+</body>
+<style>
+</style>
+</html>

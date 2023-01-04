@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<ul>
+
+</ul>
+<input type="text" name="" id="name">
+<input type="text" name="" id="age">
+<input type="text" name="" id="salary">
+<button>add new</button>
+<script>
+"use strict"
+let employees = [
+	{name: 'employee1', age: 30, salary: 400},
+	{name: 'employee2', age: 31, salary: 500},
+	{name: 'employee3', age: 32, salary: 600},
+];
+let ul = document.querySelector('ul');
+for (let subject of employees) {
+    let li = document.createElement('li');
+    li.innerHTML = subject.name + ' ' + subject.age + ' ' +
+    subject.salary;
+    li.addEventListener('click', function red () {
+        let inp = document.createElement('input');
+        inp.value = li.innerHTML;
+        li.innerHTML = ' ';
+        inp.addEventListener('blur', function () {
+            li.innerHTML = this.value;
+            this.remove();
+        })
+    li.appendChild(inp);
+    })
+    let removal = document.createElement('a');
+    removal.href = '#';
+    removal.textContent = 'remove';
+    removal.addEventListener('click', function () {
+        removal.parentElement.remove();
+    })
+    li.appendChild(removal);
+    ul.appendChild(li);
+
+}
+
+let name = document.querySelector('#name');
+let age = document.querySelector('#age');
+let salary = document.querySelector('#salary');
+let button = document.querySelector('button');
+
+button.addEventListener('click', function () {
+    let newLi = document.createElement('li');
+    newLi.innerHTML = name.value + ' ' + age.value + ' ' +
+    salary.value;
+    ul.appendChild(newLi);
+})
+
+
+</script>
+</body>
+
+<style>
+
+</style>
+</html>

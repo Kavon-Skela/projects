@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<div>
+
+</div>
+
+<script>
+"use strict"
+
+let div = document.querySelector('div');
+
+function createTable (rows, cols) {
+    let table = document.createElement('table');
+    for (let i = 0; i <= rows; i++) {
+        let tr = document.createElement('tr');
+        for (let k = 0; k <= cols; k++) {
+            let td = document.createElement('td');
+            td.innerHTML = k;
+            tr.appendChild(td)
+            }
+        table.appendChild(tr)
+        }
+}
+
+div.appendChild(createTable(3, 4));
+
+</script>
+</body>
+
+<style>
+td {
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+}
+</style>
+</html>

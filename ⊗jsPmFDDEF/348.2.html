@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+
+<script>
+"use strict"
+
+function appendText (selector, text) {
+    let elems = document.querySelectorAll(selector);
+
+    for (let elem of elems) {
+        elem.textContent += text;
+    }
+}
+
+appendText('p', 'add')
+
+
+</script>
+</body>
+
+<style>
+
+</style>
+</html>

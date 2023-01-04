@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<table>
+
+</table>
+<script>
+"use strict"
+let employees = [
+	{name: 'employee1', age: 30, salary: 400},
+	{name: 'employee2', age: 31, salary: 500},
+	{name: 'employee3', age: 32, salary: 600},
+];
+let table = document.querySelector('table');
+
+for (let objects of employees) {
+	let tr = document.createElement('tr');
+	
+	let td1 = document.createElement('td');
+	td1.textContent = objects.name;
+	tr.appendChild(td1);
+	
+	let td2 = document.createElement('td');
+	td2.textContent = objects.age;
+	tr.appendChild(td2);
+	
+	let td3 = document.createElement('td');
+	td3.textContent = objects.salary;
+	tr.appendChild(td3);
+	
+	table.appendChild(tr);
+}
+
+let tds = document.querySelectorAll('table td');
+
+for (let elems of tds) {
+    elems.addEventListener('click', function kerk () {
+       let newInp = document.createElement('input');
+       newInp.value = elems.textContent;
+       elems.textContent = '';
+       newInp.addEventListener('blur', function () {
+            elems.textContent = this.value;
+            this.remove()
+       })
+       elems.appendChild(newInp);
+    })
+}
+
+let trs = document.querySelectorAll('table tr');
+
+for (let elems of trs) {
+    let removal = document.createElement('a');
+    removal.href = '#';
+    removal.innerHTML = 'remove';
+    removal.addEventListener('click', function () {
+        removal.parentElement.remove();
+    })
+    elems.appendChild(removal);
+}
+
+</script>
+</body>
+
+<style>
+
+</style>
+</html>
